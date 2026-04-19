@@ -267,6 +267,7 @@ export function defineConfig(config: CustomNextConfig) {
     ...(config.outputFileTracingIncludes && {
       outputFileTracingIncludes: config.outputFileTracingIncludes,
     }),
+    allowedDevOrigins: ['192.168.50.11'],
     reactStrictMode: true,
     redirects: async () => [
       {

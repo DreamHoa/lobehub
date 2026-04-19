@@ -310,7 +310,7 @@ export const desktopRoutes: RouteObject[] = [
             index: true,
           },
           // Provider routes with nested structure
-          {
+/*          {
             children: [
               {
                 element: redirectElement('/settings/provider/all'),
@@ -330,6 +330,32 @@ export const desktopRoutes: RouteObject[] = [
               'Desktop > Settings > Provider > Layout',
             ),
             path: 'provider',
+          }, */
+          // Provider routes - 已禁用直接访问
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'provider',
+          },
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'provider/:providerId',
+          },
+          // Other settings tabs
+/*          {
+            element: dynamicElement(
+              () => import('@/routes/(main)/settings'),
+              'Desktop > Settings > Tab',
+            ),
+            path: ':tab',
+          }, */
+          // 禁用：拦截敏感 settings tab 直接访问
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'service-model',
+          },
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'memory',
           },
           // Other settings tabs
           {
@@ -349,7 +375,7 @@ export const desktopRoutes: RouteObject[] = [
       },
 
       // Memory routes
-      {
+    /*  {
         children: [
           {
             element: dynamicElement(
@@ -400,7 +426,12 @@ export const desktopRoutes: RouteObject[] = [
         ),
         errorElement: <ErrorBoundary resetPath="/memory" />,
         path: 'memory',
-      },
+      }, */
+      // Memory routes - 已禁用直接访问
+      {
+        element: redirectElement('/'),
+        path: 'memory',
+      }, 
 
       // Video routes
       {

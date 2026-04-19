@@ -96,7 +96,8 @@ export const ListItemRenderer = memo<ListItemRendererProps>(
               provider={item.provider.id}
               source={item.provider.source}
             />
-            <ActionIcon
+           {/* 隐藏：前往服务商设置按钮 */}
+          {/*  <ActionIcon
               className="settings-icon"
               icon={LucideBolt}
               size="small"
@@ -112,7 +113,7 @@ export const ListItemRenderer = memo<ListItemRendererProps>(
                 }
                 onClose();
               }}
-            />
+            /> */}
           </Flexbox>
         );
       }

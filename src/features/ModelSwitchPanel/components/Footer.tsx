@@ -15,6 +15,7 @@ export const Footer: FC<FooterProps> = ({ onClose }) => {
   const { t } = useTranslation('components');
   const navigate = useNavigate();
 
+  return null;
   return (
     <Flexbox className={styles.footer} padding={4}>
       <Block

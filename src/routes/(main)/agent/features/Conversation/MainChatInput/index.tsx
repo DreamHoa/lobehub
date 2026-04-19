@@ -28,7 +28,7 @@ const MainChatInput = memo(() => {
     () => [
       'model',
       'search',
-      'memory',
+//      'memory',
       'fileUpload',
       'tools',
       'typo',

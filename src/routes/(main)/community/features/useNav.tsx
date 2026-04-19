@@ -45,16 +45,16 @@ export const useNav = () => {
           <div style={{ color: 'inherit', display: 'inline' }}>{`MCP ${t('tab.plugin')}`}</div>
         ),
       },
-      {
-        icon: <Icon icon={Brain} size={ICON_SIZE} />,
-        key: DiscoverTab.Models,
-        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.model')}</div>,
-      },
-      {
-        icon: <Icon icon={BrainCircuit} size={ICON_SIZE} />,
-        key: DiscoverTab.Providers,
-        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.provider')}</div>,
-      },
+//      {
+//        icon: <Icon icon={Brain} size={ICON_SIZE} />,
+//        key: DiscoverTab.Models,
+//        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.model')}</div>,
+//      },
+//      {
+//        icon: <Icon icon={BrainCircuit} size={ICON_SIZE} />,
+//        key: DiscoverTab.Providers,
+//        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.provider')}</div>,
+//      },
     ],
     [t],
   );

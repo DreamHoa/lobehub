@@ -134,26 +134,26 @@ export const useCategory = () => {
 
     // Agent group
     const agentItems: CategoryItem[] = [
-      (!enableBusinessFeatures || isDevMode) && {
-        icon: Brain,
-        key: SettingsTabs.Provider,
-        label: t('tab.provider'),
-      },
-      {
-        icon: Sparkles,
-        key: SettingsTabs.ServiceModel,
-        label: t('tab.serviceModel'),
-      },
+//      (!enableBusinessFeatures || isDevMode) && {
+//        icon: Brain,
+//        key: SettingsTabs.Provider,
+ //       label: t('tab.provider'),
+ //     },
+ //     {
+  //      icon: Sparkles,
+ //       key: SettingsTabs.ServiceModel,
+  //      label: t('tab.serviceModel'),
+ //     },
       {
         icon: SkillsIcon,
         key: SettingsTabs.Skill,
         label: t('tab.skill'),
       },
-      {
-        icon: BrainCircuit,
-        key: SettingsTabs.Memory,
-        label: t('tab.memory'),
-      },
+ //     {
+ //       icon: BrainCircuit,
+ //       key: SettingsTabs.Memory,
+ //       label: t('tab.memory'),
+ //     },
       {
         icon: KeyRound,
         key: SettingsTabs.Creds,

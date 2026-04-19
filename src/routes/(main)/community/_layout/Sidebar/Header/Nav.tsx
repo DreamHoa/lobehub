@@ -58,18 +58,18 @@ const Nav = memo(() => {
         title: `MCP`,
         url: '/community/mcp',
       },
-      {
-        icon: Brain,
-        key: DiscoverTab.Models,
-        title: t('tab.model'),
-        url: '/community/model',
-      },
-      {
-        icon: ProviderIcon,
-        key: DiscoverTab.Providers,
-        title: t('tab.provider'),
-        url: '/community/provider',
-      },
+//      {
+//        icon: Brain,
+//        key: DiscoverTab.Models,
+//        title: t('tab.model'),
+//        url: '/community/model',
+//      },
+//      {
+//        icon: ProviderIcon,
+//        key: DiscoverTab.Providers,
+//        title: t('tab.provider'),
+//        url: '/community/provider',
+//      },
     ],
     [t],
   );
