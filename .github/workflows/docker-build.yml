@@ -37,7 +37,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/lobehub-private:latest
           build-args: |
             DOCKER=true
-            AUTH_SECRET=${{ env.AUTH_SECRET }}
-            KEY_VAULTS_SECRET=${{ env.KEY_VAULTS_SECRET }}
+            AUTH_SECRET=${{ secrets.AUTH_SECRET }}
+            KEY_VAULTS_SECRET=${{ secrets.KEY_VAULTS_SECRET }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
