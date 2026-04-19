@@ -13,7 +13,7 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ onClose }) => {
   const { t } = useTranslation('components');
-  const navigate = useNavigate();
+//  const navigate = useNavigate();
 
   return null;
   return (
