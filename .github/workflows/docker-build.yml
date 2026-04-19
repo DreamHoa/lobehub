@@ -1,5 +1,4 @@
 name: Build and Push Private LobeChat
-
 on:
   push:
     branches:
@@ -21,12 +20,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: Generate Random Secrets for Build
-        id: secrets
-        run: |
-          echo "AUTH_SECRET=$(openssl rand -base64 32)" >> $GITHUB_ENV
-          echo "KEY_VAULTS_SECRET=$(openssl rand -base64 32)" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
