@@ -179,29 +179,25 @@ export const mobileRoutes: RouteObject[] = [
             ),
             index: true,
           },
-          // Provider routes with nested structure
+          // Provider routes - 已禁用直接访问
           {
-            children: [
-              {
-                element: redirectElement('/settings/provider/all'),
-                index: true,
-              },
-              {
-                element: dynamicElement(
-                  () =>
-                    import('@/routes/(main)/settings/provider').then((m) => m.ProviderDetailPage),
-                  'Mobile > Settings > Provider > Detail',
-                ),
-                path: ':providerId',
-              },
-            ],
-            element: dynamicLayout(
-              () => import('@/routes/(mobile)/settings/provider/_layout'),
-              'Mobile > Settings > Provider > Layout',
-            ),
+            element: redirectElement('/settings/profile'),
             path: 'provider',
           },
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'provider/:providerId',
+          },
           // Other settings tabs (common, agent, memory, tts, about, etc.)
+          // 禁用：拦截敏感 settings tab 直接访问
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'service-model',
+          },
+          {
+            element: redirectElement('/settings/profile'),
+            path: 'memory',
+          },
           {
             element: dynamicElement(
               () => import('@/routes/(main)/settings'),

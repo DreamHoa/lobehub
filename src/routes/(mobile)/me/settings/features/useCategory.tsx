@@ -15,21 +15,21 @@ export const useCategory = () => {
       key: SettingsTabs.Appearance,
       label: t('tab.appearance'),
     },
-    {
-      icon: Brain,
-      key: SettingsTabs.Provider,
-      label: t('tab.provider'),
-    },
-    {
-      icon: Sparkles,
-      key: SettingsTabs.ServiceModel,
-      label: t('tab.serviceModel'),
-    },
-    {
-      icon: BrainCircuit,
-      key: SettingsTabs.Memory,
-      label: t('tab.memory'),
-    },
+//    {
+//      icon: Brain,
+//      key: SettingsTabs.Provider,
+//      label: t('tab.provider'),
+//    },
+//    {
+//      icon: Sparkles,
+//      key: SettingsTabs.ServiceModel,
+//      label: t('tab.serviceModel'),
+//    },
+//    {
+//      icon: BrainCircuit,
+//      key: SettingsTabs.Memory,
+//      label: t('tab.memory'),
+//    },
     {
       icon: Info,
       key: SettingsTabs.About,
