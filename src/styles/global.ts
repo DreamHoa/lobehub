@@ -18,6 +18,9 @@ export default ({ token }: { prefixCls: string; token: Theme }) => css`
     min-height: 100dvh;
     max-height: 100dvh;
 
+    /* iOS PWA Safe Area */
+    padding-top: env(safe-area-inset-top);
+
     @media (device-width >= 576px) {
       overflow: hidden;
     }

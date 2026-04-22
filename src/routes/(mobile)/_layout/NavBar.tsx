@@ -25,6 +25,8 @@ const styles = createStaticStyles(({ css, cssVar }) => ({
     z-index: 100;
     inset-block-end: 0;
     inset-inline: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: ${cssVar.colorBgLayout};
   `,
 }));
 
