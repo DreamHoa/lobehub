@@ -18,7 +18,6 @@ const inVercel = process.env.VERCEL === '1';
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html suppressHydrationWarning lang={'en'} style={{ height: '100%' }}>
-//      <body style={{ height: '100%', margin: 0 }}>
       <body style={{ height: '100%', margin: 0, paddingTop: 'env(safe-area-inset-top)', backgroundColor: '#000' }}>
         {children}
         <Suspense fallback={null}>
