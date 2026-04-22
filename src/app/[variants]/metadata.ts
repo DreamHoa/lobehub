@@ -61,13 +61,3 @@ export const generateMetadata = async (props: DynamicLayoutProps) => {
     },
   };
 };
-
-export const generateViewport = async () => {
-  return {
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: 'cover',
-    width: 'device-width',
-  };
-};

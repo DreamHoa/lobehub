@@ -1,7 +1,16 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { type ReactNode, Suspense } from 'react';
-
+import type { Viewport } from 'next';
 import Analytics from '@/components/Analytics';
+
+// 修复 iOS 输入框放大 + 顶部黑边
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: 'cover',
+  width: 'device-width',
+};
 
 const inVercel = process.env.VERCEL === '1';
 
