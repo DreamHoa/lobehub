@@ -20,6 +20,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { HIDDEN_SIDEBAR_ITEMS } from '@/config/privateConfig';
 import { ActionIcon, Button, Flexbox, Icon, Text, Tooltip } from '@lobehub/ui';
 import { Modal } from '@lobehub/ui/base-ui';
 import { createStaticStyles, cssVar, cx } from 'antd-style';
@@ -53,8 +54,8 @@ const ALL_SIDEBAR_ITEMS: SidebarItemConfig[] = [
   { alwaysVisible: true, id: 'agent', labelKey: 'navPanel.agent' },
   { id: 'community', labelKey: 'tab.community', routeId: 'community' },
   { id: 'resource', labelKey: 'tab.resource', routeId: 'resource' },
-//  { id: 'memory', labelKey: 'tab.memory', routeId: 'memory' },
-];
+  { id: 'memory', labelKey: 'tab.memory', routeId: 'memory' },
+].filter((item) => !HIDDEN_SIDEBAR_ITEMS.includes(item.id));
 
 const ITEM_MAP = new Map(ALL_SIDEBAR_ITEMS.map((item) => [item.id, item]));
 

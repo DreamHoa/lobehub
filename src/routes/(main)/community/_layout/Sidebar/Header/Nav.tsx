@@ -10,6 +10,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { type NavItemProps } from '@/features/NavPanel/components/NavItem';
 import NavItem from '@/features/NavPanel/components/NavItem';
 import { usePathname } from '@/libs/router/navigation';
+import { HIDDEN_COMMUNITY_TABS } from '@/config/privateConfig';
 import { DiscoverTab } from '@/types/discover';
 import { isModifierClick } from '@/utils/navigation';
 
@@ -58,19 +59,19 @@ const Nav = memo(() => {
         title: `MCP`,
         url: '/community/mcp',
       },
-//      {
-//        icon: Brain,
-//        key: DiscoverTab.Models,
-//        title: t('tab.model'),
-//        url: '/community/model',
-//      },
-//      {
-//        icon: ProviderIcon,
-//        key: DiscoverTab.Providers,
-//        title: t('tab.provider'),
-//        url: '/community/provider',
-//      },
-    ],
+      {
+        icon: Brain,
+        key: DiscoverTab.Models,
+        title: t('tab.model'),
+        url: '/community/model',
+      },
+      {
+        icon: ProviderIcon,
+        key: DiscoverTab.Providers,
+        title: t('tab.provider'),
+        url: '/community/provider',
+      },
+    ].filter((item) => !HIDDEN_COMMUNITY_TABS.includes(item.key)),
     [t],
   );
 

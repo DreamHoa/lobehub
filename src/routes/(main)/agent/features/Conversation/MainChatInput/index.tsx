@@ -2,6 +2,7 @@
 
 import { memo, useMemo } from 'react';
 
+import { HIDDEN_CHAT_ACTIONS } from '@/config/privateConfig';
 import { type ActionKeys } from '@/features/ChatInput';
 import { ChatInput } from '@/features/Conversation';
 import { useChatStore } from '@/store/chat';
@@ -25,16 +26,18 @@ const MainChatInput = memo(() => {
   const sendMenuItems = useSendMenuItems();
 
   const leftActions: ActionKeys[] = useMemo(
-    () => [
-      'model',
-      'search',
-//      'memory',
-      'fileUpload',
-      'tools',
-      'typo',
-      ...(isDevMode ? (['params'] as ActionKeys[]) : []),
-      'mainToken',
-    ],
+    () => (
+      [
+        'model',
+        'search',
+        'memory',
+        'fileUpload',
+        'tools',
+        'typo',
+        ...(isDevMode ? (['params'] as ActionKeys[]) : []),
+        'mainToken',
+      ] as ActionKeys[]
+    ).filter((action) => !HIDDEN_CHAT_ACTIONS.includes(action)),
     [isDevMode],
   );
 

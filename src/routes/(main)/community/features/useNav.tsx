@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
 
 import { type MenuProps } from '@/components/Menu';
+import { HIDDEN_COMMUNITY_TABS } from '@/config/privateConfig';
 import { DiscoverTab } from '@/types/discover';
 
 const ICON_SIZE = 16;
@@ -45,17 +46,17 @@ export const useNav = () => {
           <div style={{ color: 'inherit', display: 'inline' }}>{`MCP ${t('tab.plugin')}`}</div>
         ),
       },
-//      {
-//        icon: <Icon icon={Brain} size={ICON_SIZE} />,
-//        key: DiscoverTab.Models,
-//        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.model')}</div>,
-//      },
-//      {
-//        icon: <Icon icon={BrainCircuit} size={ICON_SIZE} />,
-//        key: DiscoverTab.Providers,
-//        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.provider')}</div>,
-//      },
-    ],
+      {
+        icon: <Icon icon={Brain} size={ICON_SIZE} />,
+        key: DiscoverTab.Models,
+        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.model')}</div>,
+      },
+      {
+        icon: <Icon icon={BrainCircuit} size={ICON_SIZE} />,
+        key: DiscoverTab.Providers,
+        label: <div style={{ color: 'inherit', display: 'inline' }}>{t('tab.provider')}</div>,
+      },
+   ].filter((item) => !HIDDEN_COMMUNITY_TABS.includes(item.key as string)),
     [t],
   );
 

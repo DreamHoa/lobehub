@@ -4,7 +4,7 @@ import { LucideArrowRight, LucideBolt } from 'lucide-react';
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-
+import { HIDE_PROVIDER_MANAGER_FOOTER } from '@/config/privateConfig';
 import { styles } from '../styles';
 
 interface FooterProps {
@@ -13,9 +13,10 @@ interface FooterProps {
 
 export const Footer: FC<FooterProps> = ({ onClose }) => {
   const { t } = useTranslation('components');
-//  const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  return null;
+  if (HIDE_PROVIDER_MANAGER_FOOTER) return null;
+
   return (
     <Flexbox className={styles.footer} padding={4}>
       <Block

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { type CellProps } from '@/components/Cell';
 import { SettingsTabs } from '@/store/global/initialState';
+import { HIDDEN_SETTINGS_TABS } from '@/config/privateConfig';
 
 export const useCategory = () => {
   const navigate = useNavigate();
@@ -15,27 +16,29 @@ export const useCategory = () => {
       key: SettingsTabs.Appearance,
       label: t('tab.appearance'),
     },
-//    {
-//      icon: Brain,
-//      key: SettingsTabs.Provider,
-//      label: t('tab.provider'),
-//    },
-//    {
-//      icon: Sparkles,
-//      key: SettingsTabs.ServiceModel,
-//      label: t('tab.serviceModel'),
-//    },
-//    {
-//      icon: BrainCircuit,
-//      key: SettingsTabs.Memory,
-//      label: t('tab.memory'),
-//    },
+    {
+      icon: Brain,
+      key: SettingsTabs.Provider,
+      label: t('tab.provider'),
+    },
+    {
+      icon: Sparkles,
+      key: SettingsTabs.ServiceModel,
+      label: t('tab.serviceModel'),
+    },
+    {
+      icon: BrainCircuit,
+      key: SettingsTabs.Memory,
+      label: t('tab.memory'),
+    },
     {
       icon: Info,
       key: SettingsTabs.About,
       label: t('tab.about'),
     },
-  ].filter(Boolean) as CellProps[];
+  ]
+    .filter(Boolean)
+    .filter((item) => !HIDDEN_SETTINGS_TABS.includes((item as CellProps).key as SettingsTabs)) as CellProps[];
 
   return items.map((item) => ({
     ...item,

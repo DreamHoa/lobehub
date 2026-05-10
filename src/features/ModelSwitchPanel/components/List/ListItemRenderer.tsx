@@ -13,6 +13,7 @@ import {
 import { cssVar, cx } from 'antd-style';
 import { LucideArrowRight, LucideBolt } from 'lucide-react';
 import { memo, useEffect, useState } from 'react';
+import { HIDE_PROVIDER_SETTINGS_BUTTON } from '@/config/privateConfig';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import urlJoin from 'url-join';
@@ -96,8 +97,8 @@ export const ListItemRenderer = memo<ListItemRendererProps>(
               provider={item.provider.id}
               source={item.provider.source}
             />
-           {/* 隐藏：前往服务商设置按钮 */}
-          {/*  <ActionIcon
+           {!HIDE_PROVIDER_SETTINGS_BUTTON && (
+            <ActionIcon
               className="settings-icon"
               icon={LucideBolt}
               size="small"
@@ -113,7 +114,8 @@ export const ListItemRenderer = memo<ListItemRendererProps>(
                 }
                 onClose();
               }}
-            /> */}
+            />
+          )}
           </Flexbox>
         );
       }

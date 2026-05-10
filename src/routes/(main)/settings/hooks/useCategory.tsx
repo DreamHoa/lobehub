@@ -26,6 +26,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useElectronStore } from '@/store/electron';
 import { electronSyncSelectors } from '@/store/electron/selectors';
+import { HIDDEN_SETTINGS_TABS } from '@/config/privateConfig';
 import { SettingsTabs } from '@/store/global/initialState';
 import {
   featureFlagsSelectors,
@@ -135,26 +136,26 @@ export const useCategory = () => {
 
     // Agent group
     const agentItems: CategoryItem[] = [
-//      (!enableBusinessFeatures || isDevMode) && {
-//        icon: Brain,
-//        key: SettingsTabs.Provider,
- //       label: t('tab.provider'),
- //     },
- //     {
-  //      icon: Sparkles,
- //       key: SettingsTabs.ServiceModel,
-  //      label: t('tab.serviceModel'),
- //     },
+      (!enableBusinessFeatures || isDevMode) && {
+        icon: Brain,
+        key: SettingsTabs.Provider,
+        label: t('tab.provider'),
+      },
+      {
+        icon: Sparkles,
+        key: SettingsTabs.ServiceModel,
+        label: t('tab.serviceModel'),
+      },
       {
         icon: SkillsIcon,
         key: SettingsTabs.Skill,
         label: t('tab.skill'),
       },
- //     {
- //       icon: BrainCircuit,
- //       key: SettingsTabs.Memory,
- //       label: t('tab.memory'),
- //     },
+      {
+        icon: BrainCircuit,
+        key: SettingsTabs.Memory,
+        label: t('tab.memory'),
+      },
       {
         icon: KeyRound,
         key: SettingsTabs.Creds,
@@ -165,7 +166,9 @@ export const useCategory = () => {
         key: SettingsTabs.APIKey,
         label: tAuth('tab.apikey'),
       },
-    ].filter(Boolean) as CategoryItem[];
+    ]
+      .filter(Boolean)
+      .filter((item) => !HIDDEN_SETTINGS_TABS.includes((item as CategoryItem).key)) as CategoryItem[];
 
     groups.push({
       items: agentItems,
